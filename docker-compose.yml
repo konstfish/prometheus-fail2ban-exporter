@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  fail2ban-exporter:
+    build: .
+    ports:
+      - "8042:8042"
+    volumes:
+      - /var/run/fail2ban/fail2ban.sock:/var/run/fail2ban/fail2ban.sock
+      - /var/lib/fail2ban:/var/lib/fail2ban
