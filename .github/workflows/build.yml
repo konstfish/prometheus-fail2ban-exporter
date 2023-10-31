@@ -1,0 +1,20 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - '*'
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: docker-practice/actions-setup-docker@master
+
+      - name: Build
+        run: |
+          docker-compose build
+    
